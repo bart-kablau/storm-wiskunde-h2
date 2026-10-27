@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Wiskunde H2 Speelles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Speelbare uitleg voor wiskunde H2 Afstand en oppervlakte, per paragraaf.">
+<!-- Engine en bouwstenen komen uit tools/speelles-engine (node tools/speelles-engine/sync.mjs). Alleen lessen-*.js zijn van dit hoofdstuk. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Crect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23EA580C%22/%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%227%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222%22/%3E%3Ccircle cx=%2212%22 cy=%2212%22 r=%221.8%22 fill=%22white%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="engine.css">
+<link rel="stylesheet" href="biologie/vis.css">
+<link rel="stylesheet" href="wiskunde/vis.css">
+<link rel="stylesheet" href="wiskunde/vis-afstand.css">
+<link rel="stylesheet" href="wiskunde/vis-opp.css">
+</head>
+<body>
+<header class="kop"><div class="kop-in">
+  <button class="merk" id="naar-kaart" aria-label="Naar de kaart"><i id="merk-ikoon"></i><span id="merk-naam"></span></button>
+  <div class="stats">
+    <div class="lvl"><b id="lvl-naam"></b><div class="xpbalk"><i id="xp-vul"></i></div></div>
+    <div class="xpn"><span id="xp-n">0</span> XP</div>
+    <button class="ikoon" id="stem" aria-pressed="false" aria-label="Voorlezen aan of uit">🔈</button>
+  </div>
+</div></header>
+<main class="wrap" id="scherm"></main>
+<div id="toasts" aria-live="polite"></div>
+<canvas id="confetti"></canvas>
+<script src="engine.js"></script>
+<script src="biologie/teken.js"></script>
+<script src="biologie/vis.js"></script>
+<script src="wiskunde/teken.js"></script>
+<script src="wiskunde/vis-afstand.js"></script>
+<script src="wiskunde/vis-opp.js"></script>
+<script src="lessen-basis.js"></script>
+<script src="lessen-afstand.js"></script>
+<script src="lessen-opp.js"></script>
+<script src="lessen-eind.js"></script>
+<script src="lessen.js"></script>
+</body>
+</html>

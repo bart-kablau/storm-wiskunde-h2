@@ -1,0 +1,51 @@
+/* WISKUNDE: stijl van de oppervlakte-bouwstenen (canoniek: tools/speelles-engine/wiskunde/vis-opp.css)
+   knipschuif, schuifproef, maatkiezer, splitser. Tikpunten >= 44 px, labels >= 13 px.
+   Let op: nooit een CSS-animatie met transform op een SVG-element dat een transform-attribuut heeft. */
+
+.wk-opp .wk-uitleg b{color:var(--plum-deep)}
+/* leesbaar in licht en donker (vis.css valt terug op een lichte --surface-2 die de engine niet definieert) */
+.wk-opp .wk-meet span{background:var(--plum-tint);color:var(--ink)}
+.wk-opp .wk-meet span.ok{background:var(--ok-tint);border-color:var(--ok)}
+.wk-opp .wk-uitleg{background:var(--plum-tint);color:var(--ink)}
+.wk-opp .wk-uitleg.goed{background:var(--ok-tint)}
+.wk-opp .wk-uitleg.fout{background:var(--soft-tint)}
+.wk-opp-slot{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px}
+
+/* knipschuif: een stuk dat op zijn plek valt, licht kort op (alleen opacity/filter, geen transform) */
+.wk-stuk.past .wk-lap{animation:wk-past .7s ease-out}
+@keyframes wk-past{0%{filter:brightness(1.35)}100%{filter:none}}
+.wk-doel path{animation:wk-doel 1.6s ease-in-out infinite}
+@keyframes wk-doel{50%{opacity:.25}}
+
+/* maatkiezer: lijnen en pillen zijn tikbaar */
+.wk-mk-maat,.wk-mk-pil{cursor:pointer;outline:none}
+.wk-mk-pil rect.pil{fill:#fff;stroke-width:2.2;transition:fill .15s}
+.wk-mk-pil text{fill:#2B1E3A;pointer-events:none}
+.wk-mk-pil:hover rect.pil,.wk-mk-pil:focus-visible rect.pil{stroke-width:3.4}
+.wk-mk-maat.kies .wk-mk-lijn{stroke:#EA580C;stroke-width:5.5}
+.wk-mk-pil.kies rect.pil{fill:#EA580C;stroke:#EA580C}
+.wk-mk-pil.kies text{fill:#fff}
+.wk-mk-maat.goed .wk-mk-lijn{stroke:#16A34A;stroke-width:5.5}
+.wk-mk-pil.goed rect.pil{fill:#16A34A;stroke:#16A34A}
+.wk-mk-pil.goed text{fill:#fff}
+.wk-mk-maat.weg,.wk-mk-pil.weg{opacity:.35;cursor:default}
+.wk-mk-pil.mis rect.pil{fill:#DC2626;stroke:#DC2626}
+.wk-mk-pil.mis text{fill:#fff}
+
+/* splitser: schaartjes en plusjes om op te tikken (r 25 = ± 48 px) */
+.wk-badge{cursor:pointer;outline:none}
+.wk-badge .ring{animation:wk-ring 1.5s ease-in-out infinite}
+@keyframes wk-ring{50%{opacity:.25}}
+.wk-badge:focus-visible .ring{stroke-width:5}
+.wk-route{min-height:0}
+.wk-route:empty{display:none}
+
+/* zelf typen met eenheid */
+.wk-typ{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px}
+.wk-typ-in{min-height:48px;width:130px;font:800 20px var(--f-body);text-align:center;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.wk-typ-in:focus{outline:none;border-color:var(--brand-bright)}
+.wk-keus.kies{border-color:var(--brand);background:var(--orange-tint)}
+.wk-check{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.wk-check[disabled]{opacity:.5}
+
+@media (prefers-reduced-motion: reduce){.wk-stuk.past .wk-lap,.wk-doel path,.wk-badge .ring{animation:none}}

@@ -1,0 +1,78 @@
+{
+ "build": "4d18249454",
+ "appBytes": 1186249,
+ "app": [
+  "assets/font/fredoka-500.woff2",
+  "assets/font/fredoka-600.woff2",
+  "assets/font/fredoka-700.woff2",
+  "assets/font/nunito-400.woff2",
+  "assets/font/nunito-600.woff2",
+  "assets/font/nunito-700.woff2",
+  "assets/font/nunito-800.woff2",
+  "assets/icon-192.png",
+  "assets/icon-512.png",
+  "content.js",
+  "ezels.js",
+  "index.html",
+  "manifest.webmanifest",
+  "math.js",
+  "offline.js",
+  "speelles/assets/font/fredoka-500.woff2",
+  "speelles/assets/font/fredoka-600.woff2",
+  "speelles/assets/font/fredoka-700.woff2",
+  "speelles/assets/font/nunito-400.woff2",
+  "speelles/assets/font/nunito-600.woff2",
+  "speelles/assets/font/nunito-700.woff2",
+  "speelles/assets/font/nunito-800.woff2",
+  "speelles/biologie/teken.js",
+  "speelles/biologie/vis.css",
+  "speelles/biologie/vis.js",
+  "speelles/engine.css",
+  "speelles/engine.js",
+  "speelles/index.html",
+  "speelles/lessen-afstand.js",
+  "speelles/lessen-basis.js",
+  "speelles/lessen-eind.js",
+  "speelles/lessen-opp.js",
+  "speelles/lessen.js",
+  "speelles/wiskunde/teken.js",
+  "speelles/wiskunde/vis-afstand.css",
+  "speelles/wiskunde/vis-afstand.js",
+  "speelles/wiskunde/vis-opp.css",
+  "speelles/wiskunde/vis-opp.js",
+  "speelles/wiskunde/vis.css",
+  "video/manifest.js"
+ ],
+ "media": [
+  {
+   "pad": "video/afstand-lijn.mp4",
+   "hash": "2e58e458c16d",
+   "bytes": 6978168
+  },
+  {
+   "pad": "video/afstand-punt.mp4",
+   "hash": "0c5d8db686b1",
+   "bytes": 8759252
+  },
+  {
+   "pad": "video/bissectrice.mp4",
+   "hash": "9ee3e7dbae51",
+   "bytes": 6715403
+  },
+  {
+   "pad": "video/middelloodlijn.mp4",
+   "hash": "07fc4e96e33b",
+   "bytes": 8372811
+  },
+  {
+   "pad": "video/opp-driehoek.mp4",
+   "hash": "9632b58720bb",
+   "bytes": 8161214
+  },
+  {
+   "pad": "video/zwaartelijn-hoogtelijn.mp4",
+   "hash": "20c31a609ed9",
+   "bytes": 7611406
+  }
+ ]
+}

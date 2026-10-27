@@ -1,0 +1,47 @@
+/* WISKUNDE: basisstijl van het pakket (canoniek: tools/speelles-engine/wiskunde/vis.css)
+   Het tekenvlak is altijd licht papier (ook in donkere modus). Tikpunten >= 44 px, labels >= 13 px.
+   Bouwsteen-specifieke stijl staat in vis-afstand.css en vis-opp.css. */
+
+/* leven in de tekeningen (beeldstandaard: ademen en knipperen) */
+.wk-adem{transform-box:fill-box;transform-origin:50% 100%;animation:wk-adem 4s ease-in-out infinite}
+@keyframes wk-adem{50%{transform:translateY(-1.4%) scale(1.014)}}
+.wk-knip{transform-box:fill-box;transform-origin:center;transform:scaleY(0);animation:wk-knip 4.8s infinite}
+@keyframes wk-knip{0%,92%{transform:scaleY(0)}94.5%{transform:scaleY(1)}97%,100%{transform:scaleY(0)}}
+@media (prefers-reduced-motion: reduce){.wk-adem,.wk-knip{animation:none}.wk-knip{transform:scaleY(0)}}
+
+/* de wortel van elke bouwsteen */
+.wk-vis{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px}
+.wk-svg{display:block;width:100%;max-width:520px;height:auto;border-radius:14px;box-shadow:0 2px 0 #E6DCC4,0 6px 18px rgba(43,30,58,.12);touch-action:none;user-select:none;-webkit-user-select:none}
+.wk-svg text{font-family:var(--f-body, Nunito, sans-serif)}
+
+/* sleepbare punten */
+.wk-handvat{cursor:grab;outline:none}
+.wk-handvat .wk-gloed{transition:r .15s, opacity .15s}
+.wk-handvat:hover .wk-gloed,.wk-handvat:focus-visible .wk-gloed,.wk-handvat.sleept .wk-gloed{opacity:.32;r:19px}
+.wk-handvat.sleept{cursor:grabbing}
+@keyframes wk-wenk{0%,100%{opacity:.18}50%{opacity:.45}}
+.wk-handvat.wenk .wk-gloed{animation:wk-wenk 1.4s ease-in-out infinite}
+
+/* meetstrook onder de tekening: live afstanden */
+.wk-meet{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 8px;width:100%}
+.wk-meet span{font-family:var(--f-body);font-size:15px;font-weight:800;border-radius:99px;padding:5px 12px;background:var(--plum-tint);color:var(--ink);border:2px solid transparent}
+.wk-meet span.ok{border-color:var(--ok, #16A34A);background:var(--ok-tint, #DCFCE7)}
+.wk-meet span.nee{border-color:var(--soft, #DC2626);background:var(--soft-tint, #FEE2E2)}
+
+/* vraagtekst en keuzeknoppen binnen een bouwsteen (nooit .optie: dat is de mc van de engine) */
+.wk-vraag{width:100%;font-family:var(--f-display);font-weight:600;font-size:17px;line-height:1.3;color:var(--plum-deep);text-align:center;text-wrap:balance}
+.wk-vraag small{display:block;font-family:var(--f-body);font-size:14px;font-weight:700;color:var(--ink-soft);margin-top:2px}
+.wk-keuzes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%}
+.wk-keus{min-height:48px;min-width:48px;border-radius:14px;border:2px solid var(--line);background:var(--bg);padding:8px 14px;font-size:16px;font-weight:800;color:var(--plum-deep);transition:transform .15s var(--ease),border-color .2s,background .2s}
+.wk-keus:hover:not([disabled]){border-color:var(--brand-bright)}
+.wk-keus:active{transform:scale(.97)}
+.wk-keus.goed{border-color:var(--ok);background:var(--ok-tint)}
+.wk-keus.fout{border-color:var(--soft);background:var(--soft-tint);opacity:.7}
+.wk-keus[disabled]:not(.goed){opacity:.5}
+.wk-uitleg{width:100%;font-size:15px;line-height:1.4;border-radius:14px;padding:10px 14px;background:var(--plum-tint);color:var(--ink)}
+.wk-uitleg:empty{display:none}
+.wk-uitleg.goed{background:var(--ok-tint)}
+.wk-uitleg.fout{background:var(--soft-tint)}
+.wk-schud{animation:schud .4s}
+.vis-vraagkop:empty{display:none}
+.wk-eiland svg{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 4px 14px rgba(30,58,95,.18)}
